@@ -1,0 +1,116 @@
+body {
+  padding: 60px 0;
+  background: #ffffff;
+}
+.error {
+    color: white;
+    font-size: .8em;
+    background-color: #ef6363;
+    padding: 5px;
+    border-radius: 5px;
+}
+span.page-header-id {
+  color:#bababa;
+  font-size:16px;
+}
+.title {
+  float:left;
+  margin:0px;
+}
+a {
+  cursor:hand;
+}
+select {
+  padding:4px;
+  width:100%;
+}
+.tb {
+  margin-top:20px;
+  background-color:#F4F4F4;
+  text-align:center;
+  margin-bottom:20px;
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
+}
+.nblink-left:link, .nblink-left:active, .nblink-left:visited {
+}
+.nblink-left:hover {
+  text-decoration: none;
+}
+.nblink-right:link, .nblink-right:active, .nblink-right:visited {
+}
+.nblink-right:hover {
+  text-decoration: none;
+}
+.fa-external-link-alt {
+  font-size:8px;
+}
+.clear {
+  clear:both;
+}
+.output-404 {
+  color:#B62918;
+  font-weight:bold;
+}
+.output-403 {
+  color:orange;
+  font-weight:bold;
+}
+.output-200 {
+  color:#81A44C;
+  font-weight:bold;
+}
+.page-header {
+  margin:0px;
+  border:0px;
+  padding-top: 10px;
+}
+.connections-table {
+  margin-bottom:0px;
+}
+.f-bold {
+  font-weight:bold;
+}
+#inputArea {
+    width:100%;
+    height:250px;
+}
+.panel {
+  margin-top:20px;
+  margin-bottom:0px;
+}
+.panel-footer {
+  color: #c2c2c2;
+  font-style:italic;
+}
+.search-pages {
+  padding-top:0px;
+  padding-bottom:0px;
+  margin-bottom:0px;
+}
+.search-connections {
+  padding-bottom:20px;
+  padding-top:0px;
+}
+h3.connections {
+  margin-top:0px;
+  margin-bottom:0px;
+}
+.footer {
+  color:#ccc;
+}
+#item_desc {
+  width:100%;
+  margin-bottom:10px;
+}
+.search {
+  float:right;
+}
+.search dt {
+  display:none;
+}
+.searchform {
+  float:left;
+  padding:0px;
+
+}

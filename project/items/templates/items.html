@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% from "_form_macros.html" import render_field %}
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p class="f-bold">Input data</p>
+        <form action="" method=post>
+           {{form.hidden_tag()}}
+              <p>{{ form.inputArea }}</p>
+              <p><input type="submit" class="btn btn-primary" value="Rename APs"></input></p>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p class="f-bold">Input format</p>
+<pre>Main_AP01, 00:00:00:00:00:01
+Main_AP02, 00:00:00:00:00:02
+Main_AP03, 00:00:00:00:00:03
+Main_AP04, 00:00:00:00:00:04
+Main_AP05, 00:00:00:00:00:05
+Main_AP06, 00:00:00:00:00:06
+Main_AP07, 00:00:00:00:00:07</pre>
+      </div>
+    </div>
+  </div>
+
+  {% if request.method == 'POST' and form.inputArea.data %}
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p class="f-bold">Output data</p>
+        <ul style="list-style-type:none;">
+        {% for ap in updateAp %}
+          <li>{% if ap['status'] == 404 %}<img src="{{ url_for('static', filename='img/status_fail.png') }}" /> <span class="output-404">{{ ap['status'] }}</span>
+              {% elif ap['status'] == 403 %}<img src="{{ url_for('static', filename='img/status_fail.png') }}" /> <span class="output-403">{{ ap['status'] }}</span>
+              {% elif ap['status'] == 401 %}<img src="{{ url_for('static', filename='img/status_fail.png') }}" /> <span class="output-403">{{ ap['status'] }}</span>
+              {% elif ap['status'] == 200 %}<img src="{{ url_for('static', filename='img/status_success.png') }}" /> <span class="output-200">{{ ap['status'] }}</span>
+              {% else %} {{ ap['status'] }} - {% endif %}
+              {{ ap['apName'] }}, {{ ap['apMac'] }}
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <div style="clear:both;"></div>
+</div>
+{% endblock %}

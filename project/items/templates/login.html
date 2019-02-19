@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% from "_form_macros.html" import render_field %}
+{% block content %}
+<!-- <div class="page-header">
+  <div class="col-md-12">
+    <h2 class="title">prime-renameAP</h2>
+  </div>
+</div>-->
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {% if form.errors %}
+        <div class="alert alert-danger">
+          {{ form.errors['username'][0] }}
+        </div>
+        {% endif %}
+        <form method="POST">
+            <label>Username <br />{{ form.username() }}</label><br />
+            <label>Password <br />{{ form.password() }}</label><br />
+            <p><input type="submit" class="btn btn-primary" value="Login"></input></p>
+            {{ form.hidden_tag() }}
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div style="clear:both;"></div>
+</div>
+{% endblock %}
